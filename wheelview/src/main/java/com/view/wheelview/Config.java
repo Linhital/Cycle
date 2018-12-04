@@ -5,6 +5,7 @@ import android.content.res.TypedArray;
 import android.graphics.Color;
 import android.util.AttributeSet;
 import android.view.View;
+import android.widget.LinearLayout;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -41,8 +42,8 @@ public class Config {
         unSelectID = a.getResourceId(R.styleable.CycleViewPager_indicator_unselect, -1);
         indicatorMargin = (int) a.getDimension(R.styleable.CycleViewPager_indicator_margin, 10);
         titleEnable = a.getBoolean(R.styleable.CycleViewPager_title_enable, true);
-        indicatorWidth = (int) a.getDimension(R.styleable.CycleViewPager_indicator_width, 30);
-        indicatorHeight = (int) a.getDimension(R.styleable.CycleViewPager_indicator_height, 30);
+        indicatorWidth = (int) a.getDimension(R.styleable.CycleViewPager_indicator_width, LinearLayout.LayoutParams.WRAP_CONTENT);
+        indicatorHeight = (int) a.getDimension(R.styleable.CycleViewPager_indicator_height, LinearLayout.LayoutParams.WRAP_CONTENT);
         a.recycle();
     }
 }
