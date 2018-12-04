@@ -42,6 +42,7 @@ public class Config {
         unSelectID = a.getResourceId(R.styleable.CycleViewPager_indicator_unselect, -1);
         indicatorMargin = (int) a.getDimension(R.styleable.CycleViewPager_indicator_margin, 10);
         titleEnable = a.getBoolean(R.styleable.CycleViewPager_title_enable, true);
+
         indicatorWidth = (int) a.getDimension(R.styleable.CycleViewPager_indicator_width, LinearLayout.LayoutParams.WRAP_CONTENT);
         indicatorHeight = (int) a.getDimension(R.styleable.CycleViewPager_indicator_height, LinearLayout.LayoutParams.WRAP_CONTENT);
         a.recycle();
