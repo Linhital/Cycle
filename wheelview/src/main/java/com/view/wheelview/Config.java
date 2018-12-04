@@ -37,7 +37,7 @@ public class Config {
         indicatorBottom = a.getInteger(R.styleable.CycleViewPager_indicator_bottom, 20);
         titleColor = a.getColor(R.styleable.CycleViewPager_title_color, Color.WHITE);
         titleBottom = a.getInteger(R.styleable.CycleViewPager_title_bottom, 10);
-        titleSize = a.getDimension(R.styleable.CycleViewPager_title_size, 20);
+        titleSize = a.getDimension(R.styleable.CycleViewPager_title_size, 16);
         isCycle = a.getBoolean(R.styleable.CycleViewPager_cycle, true);
         duration = a.getInteger(R.styleable.CycleViewPager_duration, 4000);
         selectID = a.getResourceId(R.styleable.CycleViewPager_indicator_select, -1);
