@@ -13,5 +13,7 @@
         <attr name="title_enable" format="boolean" />
         <attr name="indicator_width" format="dimension" />
         <attr name="indicator_height" format="dimension" />
+        <attr name="place_drawable" format="reference" />
+        <attr name="error_drawable" format="reference" />
     </declare-styleable>
 </resources>

@@ -117,7 +117,7 @@ public class WheelView extends FrameLayout implements ViewPager.OnPageChangeList
             ImageView view = new ImageView(config.mContext);
             view.setLayoutParams(params);
             rl.addView(view);
-            Picasso.get().load(data.getUrl()).fit().centerCrop().into(view);
+            Picasso.get().load(data.getUrl()).placeholder(config.placeDrawable).error(config.errorDrawable).fit().centerCrop().into(view);
             if (data.getTitle() != null)
                 rl.setTag(data.getTitle());
             views.add(rl);

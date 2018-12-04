@@ -6,7 +6,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 
-import com.squareup.picasso.Picasso;
 import com.view.wheelview.WheelData;
 import com.view.wheelview.WheelView;
 
@@ -62,7 +61,8 @@ public class MainActivity extends AppCompatActivity {
         data.add(new WheelData(url2, "标题4"));
 
         imageView = findViewById(R.id.view);
-        Picasso.get().load(url1).placeholder(R.drawable.placeholder).error(R.drawable.error).into(imageView);
+//        imageView.setImageResource(R.drawable.place);
+//        Picasso.get().load("123").placeholder(R.drawable.placeholder).error().into(imageView);
 
         wheelView = findViewById(R.id.wheel);
         wheelView.setData(data);

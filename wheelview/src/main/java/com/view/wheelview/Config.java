@@ -25,6 +25,8 @@ public class Config {
     public int indicatorMargin;//指示器之间的距离
     public int indicatorWidth;
     public int indicatorHeight;
+    public int placeDrawable;
+    public int errorDrawable;
     public WheelView.OnPageClickListener onPageClickListener;
 
 
@@ -42,7 +44,8 @@ public class Config {
         unSelectID = a.getResourceId(R.styleable.CycleViewPager_indicator_unselect, -1);
         indicatorMargin = (int) a.getDimension(R.styleable.CycleViewPager_indicator_margin, 10);
         titleEnable = a.getBoolean(R.styleable.CycleViewPager_title_enable, true);
-
+        placeDrawable = a.getResourceId(R.styleable.CycleViewPager_place_drawable, R.drawable.ic_place);
+        errorDrawable = a.getResourceId(R.styleable.CycleViewPager_error_drawable, R.drawable.ic_error);
         indicatorWidth = (int) a.getDimension(R.styleable.CycleViewPager_indicator_width, LinearLayout.LayoutParams.WRAP_CONTENT);
         indicatorHeight = (int) a.getDimension(R.styleable.CycleViewPager_indicator_height, LinearLayout.LayoutParams.WRAP_CONTENT);
         a.recycle();
