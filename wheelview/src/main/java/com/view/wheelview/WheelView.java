@@ -75,6 +75,7 @@ public class WheelView extends FrameLayout implements ViewPager.OnPageChangeList
         adapter.setConfig(config);
         viewPager.setAdapter(adapter);
         viewPager.addOnPageChangeListener(this);
+        viewPager.setOnTouchListener(this);
 
 
         indicator = new LinearLayout(context);
@@ -85,7 +86,6 @@ public class WheelView extends FrameLayout implements ViewPager.OnPageChangeList
         indicator.setGravity(Gravity.CENTER);
         indicator.setOrientation(LinearLayout.HORIZONTAL);
         indicator.setId(INDICATORID);
-        indicator.setOnTouchListener(this);
         rl.addView(indicator);
 
         title = new TextView(context);
@@ -133,7 +133,6 @@ public class WheelView extends FrameLayout implements ViewPager.OnPageChangeList
             setViews(views);
     }
 
-
     public void setViews(List<View> allView) {
         mCurrent = 0;
         assert allView != null;
@@ -154,7 +153,7 @@ public class WheelView extends FrameLayout implements ViewPager.OnPageChangeList
                 indicatorViews[i].setOnClickListener(this);
                 indicatorViews[i].setOnTouchListener(this);
                 indicator.addView(indicatorViews[i]);
-                allView.get(i).setOnTouchListener(this);
+//                allView.get(i).setOnTouchListener(this);
             }
         }
         if (allView.size() > 1 && config.isCycle) {
@@ -227,7 +226,6 @@ public class WheelView extends FrameLayout implements ViewPager.OnPageChangeList
             case MotionEvent.ACTION_CANCEL:
             case MotionEvent.ACTION_UP:
                 handler.postDelayed(runnable, config.duration);
-                break;
             default:
                 break;
         }
