@@ -6,6 +6,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.support.v4.view.ViewPager;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.MotionEvent;
 import android.view.View;
@@ -32,6 +33,7 @@ public class WheelView extends FrameLayout implements ViewPager.OnPageChangeList
     private Handler handler;
     private ImageView[] indicatorViews;
     private Config config;
+    private boolean DEBUG;
     final Runnable runnable = new Runnable() {
         @Override
         public void run() {
@@ -50,6 +52,10 @@ public class WheelView extends FrameLayout implements ViewPager.OnPageChangeList
     public WheelView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         init(context, attrs);
+    }
+
+    public void setDEBUG(boolean DEBUG) {
+        this.DEBUG = DEBUG;
     }
 
     private void init(Context context, AttributeSet attrs) {
@@ -218,13 +224,15 @@ public class WheelView extends FrameLayout implements ViewPager.OnPageChangeList
             case MotionEvent.ACTION_DOWN:
                 handler.removeCallbacks(runnable);
                 break;
-            case MotionEvent.ACTION_MOVE:
-                break;
             case MotionEvent.ACTION_CANCEL:
             case MotionEvent.ACTION_UP:
                 handler.postDelayed(runnable, config.duration);
                 break;
+            default:
+                break;
         }
+        if (DEBUG)
+            Log.i("life", event.getAction() + "");
         return false;
     }
 
