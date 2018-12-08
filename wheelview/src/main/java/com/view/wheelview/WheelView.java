@@ -187,6 +187,7 @@ public class WheelView extends FrameLayout implements ViewPager.OnPageChangeList
         }
         if (config.views.get(mCurrent).getTag() instanceof String)
             title.setText(config.views.get(mCurrent).getTag().toString());
+
         setIndicator();
     }
 
@@ -217,6 +218,9 @@ public class WheelView extends FrameLayout implements ViewPager.OnPageChangeList
             case MotionEvent.ACTION_DOWN:
                 handler.removeCallbacks(runnable);
                 break;
+            case MotionEvent.ACTION_MOVE:
+                break;
+            case MotionEvent.ACTION_CANCEL:
             case MotionEvent.ACTION_UP:
                 handler.postDelayed(runnable, config.duration);
                 break;
